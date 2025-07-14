@@ -1,5 +1,8 @@
 package ru.yandex.praktikum.model;
 
+import static ru.yandex.praktikum.model.constants.Colour.RED;
+import static ru.yandex.praktikum.model.constants.Discount.DISCOUNT_PERCENTAGE;
+
 public class Apple extends Food {
 
     String color;
@@ -12,9 +15,9 @@ public class Apple extends Food {
 
     }
 
-    public int getDiscount() {
-        if (color.equals("red")) {
-            return 60;
+    public double getDiscount() {
+        if (color.equals(RED)) {
+            return this.price / 100 * DISCOUNT_PERCENTAGE;
         }
         return 0;
     }

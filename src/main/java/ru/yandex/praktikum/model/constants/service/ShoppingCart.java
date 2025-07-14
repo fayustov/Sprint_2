@@ -7,19 +7,32 @@ public class ShoppingCart {
     Food[] shopingCart = {};
 
     public ShoppingCart(Food[] products) {
-        Food[] shopingCart = {};
+        this.shopingCart = products;
     }
 
-    public int amountWithoutDiscount() {
-        return 0;
+    public double amountWithoutDiscount() {
+        double amount = 0;
+        for (int i = 0; i < shopingCart.length; i++) {
+            amount += shopingCart[i].getPrice();
+        }
+        return amount;
     }
 
-    public int amountWithDiscount() {
-        return 0;
+    public double amountWithDiscount() {
+        double amount = 0;
+        for (int i = 0; i < shopingCart.length; i++) {
+            amount += shopingCart[i].getPrice() - shopingCart[i].getDiscount();
+        }
+        return amount;
     }
 
-    public int amountVeganProductsWithoutDiscount() {
-        return 0;
+    public double amountVeganProductsWithoutDiscount() {
+        double amount = 0;
+        for (int i = 0; i < shopingCart.length; i++) {
+            if (shopingCart[i].isVegetarian()) {
+                amount += shopingCart[i].getPrice();
+            }
+        }
+        return amount;
     }
-
 }
