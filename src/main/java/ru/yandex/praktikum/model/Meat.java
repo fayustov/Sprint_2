@@ -5,7 +5,7 @@ import static ru.yandex.praktikum.model.constants.Discount.DISCOUNT_PERCENTAGE;
 public class Meat extends Food {
 
     public Meat(int amount, int price) {
-        super();
+        super(amount, price, false);
     }
 
     @Override

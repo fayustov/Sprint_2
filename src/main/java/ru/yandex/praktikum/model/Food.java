@@ -1,17 +1,19 @@
 package ru.yandex.praktikum.model;
 
-import static ru.yandex.praktikum.model.constants.Discount.DISCOUNT_PERCENTAGE;
-
 public abstract class Food implements Discountable {
 
     int amount;
     double price;
     boolean isVegetarian;
 
-    public Food() {
+    public Food(int amount, double price, boolean isVegetarian) {
         this.amount = amount;
         this.price = price;
         this.isVegetarian = isVegetarian;
+    }
+
+    public int getAmount() {
+        return amount;
     }
 
     public double getPrice() {

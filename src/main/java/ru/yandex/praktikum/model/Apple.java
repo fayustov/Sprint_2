@@ -7,12 +7,9 @@ public class Apple extends Food {
 
     String color;
 
-    public Apple(int amount, int price, String color) {
-        this.amount = amount;
-        this.price = price;
+    public Apple(int amount, double price, String color) {
+        super(amount, price, true);
         this.color = color;
-        isVegetarian = true;
-
     }
 
     public double getDiscount() {
